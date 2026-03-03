@@ -74,6 +74,29 @@ public class CentroDeportivo {
     }
 
     /**
+     * Elimina un entrenador recibinedo al entrenador
+     * @param entrenador recibido
+     * @return el entrenador eliminado
+     */
+    public Entrenador eliminarEntrenador(Entrenador entrenador) {
+        Entrenador entrenadorEncontrado = null;
+        boolean seguirBuscando = true;
+
+        for(int i = 0; i < NUM_MAX_ENTRENADORES && seguirBuscando; i++){
+            if (entrenadores[i] != null && entrenadores[i].getId() == entrenador.getId()) {
+                entrenadorEncontrado = entrenadores[i];
+                entrenadores[i] = null;
+                seguirBuscando = false;
+            }
+        }
+        return entrenadorEncontrado;
+    }
+
+
+
+
+
+    /**
      * Muestra los entrenadores registrados
      * @return String con los entrenadores
      */
