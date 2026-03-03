@@ -4,6 +4,10 @@ public class CentroDeportivo {
     private final int NUM_MAX_ENTRENADORES;
 
     public CentroDeportivo(int num_entrenadores) {
+        if(num_entrenadores <= 0){
+            throw  new IllegalArgumentException("Los entrenadores no puede ser menor que 1.");
+        }
+
         NUM_MAX_ENTRENADORES = num_entrenadores;
         entrenadores = new Entrenador[NUM_MAX_ENTRENADORES];
     }
@@ -79,4 +83,7 @@ public class CentroDeportivo {
         return sb.toString();
     }
 
+    public int contarEntrenadores(){
+
+    }
 }
