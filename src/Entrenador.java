@@ -11,10 +11,11 @@ public class Entrenador {
      * @param nombre nombre del entrenador
      * @param especialidad especialidad del entrenador
      */
-    public Entrenador(int id, String nombre, String especialidad) {
+    public Entrenador(int id, String nombre, String especialidad, int añosExperiencia) {
         this.id = id;
         this.nombre = nombre;
         this.especialidad = especialidad;
+        this.añosExperiencia = añosExperiencia;
     }
 
     /**
@@ -41,6 +42,14 @@ public class Entrenador {
         return especialidad;
     }
 
+    /**
+     * Devuelve los años de experiencia del entrenador
+     * @return
+     */
+    public int getAñosExperiencia(){
+        return añosExperiencia;
+    }
+
 
     @Override
     public String toString() {
@@ -48,6 +57,7 @@ public class Entrenador {
         sb.append(String.format("id: %d,", id));
         sb.append(String.format("nombre: %s,", nombre));
         sb.append(String.format("especialidad: %s,", especialidad));
+        sb.append(String.format("años de experiecia: %d", añosExperiencia));
         sb.append(" }");
 
         return sb.toString();
