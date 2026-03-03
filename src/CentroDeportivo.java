@@ -26,5 +26,21 @@ public class CentroDeportivo {
         return entrenadorEncontrado;
     }
 
+    /**
+     * Busca la primera poscion libre en los entrenadores
+     * @return la primera poscion libre
+     */
+    private int buscarPrimerHuecoLibre(){
+        int poscionLibre = -1;
+        boolean seguirBuscando = true;
+
+        for (int i = 0; i < NUM_MAX_ENTRENADORES && seguirBuscando; i++) {
+            if (entrenadores[i] == null) {
+                poscionLibre = i;
+                seguirBuscando = false;
+            }
+        }
+        return poscionLibre;
+    }
 
 }
