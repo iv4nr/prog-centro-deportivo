@@ -2,14 +2,20 @@ public class CentroDeportivo {
 
     private Entrenador[] entrenadores;
     private final int NUM_MAX_ENTRENADORES;
+    //private int num_minimo_entrenadores;
 
     public CentroDeportivo(int num_entrenadores) {
-        if(num_entrenadores <= 0){
-            throw  new IllegalArgumentException("Los entrenadores no puede ser menor que 1.");
+        /*
+        num_minimo_entrenadores = numero_minimo;
+        if (num_entrenadores <= numero_minimo) {
+            throw new IllegalArgumentException("El numero de entrenadores tiene que ser mayor a 0");
         }
+         */
 
-        NUM_MAX_ENTRENADORES = num_entrenadores;
+        this.NUM_MAX_ENTRENADORES = num_entrenadores;
         entrenadores = new Entrenador[NUM_MAX_ENTRENADORES];
+
+
     }
 
     /**
@@ -72,14 +78,14 @@ public class CentroDeportivo {
      * @return String con los entrenadores
      */
     public String mostrarEntrenadores(){
-        StringBuilder sb = new StringBuilder("Entrenadores {");
+        StringBuilder sb = new StringBuilder("Entrenadores registrados: \n");
 
         for (int i = 0; i < NUM_MAX_ENTRENADORES; i++) {
             if (entrenadores[i] != null) {
                 sb.append(entrenadores[i].toString());
+                sb.append("\n");
             }
         }
-        sb.append(" }");
         return sb.toString();
     }
 

@@ -55,9 +55,9 @@ public class Entrenador {
     public String toString() {
         StringBuilder sb = new StringBuilder("Entrenador { ");
         sb.append(String.format("id: %d,", id));
-        sb.append(String.format("nombre: %s,", nombre));
-        sb.append(String.format("especialidad: %s,", especialidad));
-        sb.append(String.format("años de experiecia: %d", añosExperiencia));
+        sb.append(String.format(" nombre: %s,", nombre));
+        sb.append(String.format(" especialidad: %s,", especialidad));
+        sb.append(String.format(" años de experiecia: %d", añosExperiencia));
         sb.append(" }");
 
         return sb.toString();
