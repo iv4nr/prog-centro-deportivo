@@ -43,4 +43,26 @@ public class CentroDeportivo {
         return poscionLibre;
     }
 
+    /**
+     * Registra un entrenador si no existe ya y hay hueco.
+     * @param entrenador entrenador recibido
+     * @return true si se ha añadido correctamente o false si no se ha podido añadir
+     */
+    public boolean registrarEntrenador(Entrenador entrenador) {
+        boolean entrenadorRegistrado = false;
+        int posicionEntrenador;
+
+        if (buscarEntrenador(entrenador.getId()) == null) {
+            posicionEntrenador = buscarPrimerHuecoLibre();
+            if (posicionEntrenador >= 0){
+                entrenadores[posicionEntrenador] = entrenador;
+                entrenadorRegistrado = true;
+            }
+        }
+
+        return entrenadorRegistrado;
+    }
+
+
+
 }
